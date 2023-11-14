@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^16.3.1",
+    "faker": "^6.6.6"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.6.1"
+  },
+  "scripts": {
+    "test": "npx cypress run --reporter cypress-mochawesome-reporter --reporter-options reportDir=\"results\",overwrite=false,html=true,json=true && npx mochawesome-merge \"results/*.json\" > mochawesome.json && npx marge mochawesome.json"
+  }
+}
